@@ -6,6 +6,8 @@
     <meta name="description" content="Ivan Vega's Personal Website - Economics and AI Research" />
     <title>Ivan Vega</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
@@ -17,38 +19,74 @@
         <a href="mailto:andres.vega.1997@gmail.com">Email</a>
       </p>
     </header>
-    <section id="intro">
-      <p><strong>
-        I'm an individual with a passion for Economic and AI Research
-      </strong></p>
-      
-      <ul>
-        <li>My interests are in Economics, AI, Meditation and Automated Market Makers (AMMs)</li>
-        <li>My other interests are Tennis, Soccer and Reading Fantasy!</li>
-      </ul>
-      
-      <p>If you find these topics or thoughts interesting, <a href="mailto:andres.vega.1997@gmail.com">reach out</a>!</p>
-    </section>
-    
-    <hr>
-    
-    <main id="bio">
-      <section id="writing">
-        <h3>Selected Writing / Research</h3>
-        <p>These are selected pieces of research and blogging:</p>
+    <!-- Navigation buttons -->
+    <nav class="section-nav">
+      <button class="nav-btn active" data-section="about">About</button>
+      <button class="nav-btn" data-section="bookshelf">Bookshelf</button>
+      <button class="nav-btn" data-section="notes">Notes</button>
+      <button class="nav-btn" data-section="blog">Blog Posts</button>
+    </nav>
+
+    <!-- Content sections -->
+    <main id="content">
+      <!-- About Section -->
+      <section id="about" class="content-section active">
+        <div id="intro">
+          <p><strong>I'm an individual with a passion for Economic and AI Research</strong></p>
+          <ul>
+            <li>My interests are in Economics, AI, Meditation and Automated Market Makers (AMMs)</li>
+            <li>My other interests are Tennis, Soccer and Reading Fantasy!</li>
+          </ul>
+          <p>If you find these topics or thoughts interesting, <a href="mailto:andres.vega.1997@gmail.com">reach out</a>!</p>
+        </div>
+        
+        <div id="writing">
+          <h3>Selected Writing / Research</h3>
+          <p>These are selected pieces of research and blogging:</p>
+          <ul>
+            <li><a href="Chile.pdf" target="_blank" rel="noopener noreferrer">Effects of South American Migration in Chilean Labour Markets</a></li>
+            <li>My Blog <a href="https://dessertdynamics.substack.com/" target="_blank" rel="noopener noreferrer">Dessert Dynamics</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Bookshelf Section -->
+      <section id="bookshelf" class="content-section">
+        <h2>Bookshelf</h2>
+        <p>Books I'm reading or have enjoyed:</p>
         <ul>
-          <li><a href="Chile.pdf" target="_blank" rel="noopener noreferrer">Effects of South American Migration in Chilean Labour Markets</a></li>
-          <li>My Blog <a href="https://dessertdynamics.substack.com/" target="_blank" rel="noopener noreferrer">Dessert Dynamics</a></li>
+          <li><strong>Currently Reading:</strong></li>
+          <li><strong>Recently Finished:</strong></li>
+          <li><strong>All-Time Favorites:</strong></li>
         </ul>
       </section>
-      
-      <section id="notes">
-        <h3>Notes</h3>
-        <p>From time to time, I take notes of interesting links, papers, and articles that I have read. These are just reminders for myself:</p>
+
+      <!-- Notes Section -->
+      <section id="notes" class="content-section">
+        <h2>Notes</h2>
+        <p>Interesting links, papers, and articles that I've collected:</p>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li><strong>Economics:</strong></li>
+          <li><strong>AI & Machine Learning:</strong></li>
+          <li><strong>Philosophy & Meditation:</strong></li>
+        </ul>
+      </section>
+
+      <!-- Blog Posts Section -->
+      <section id="blog" class="content-section">
+        <h2>Blog Posts</h2>
+        <p>My writings across different platforms:</p>
+        
+        <h3>Substack</h3>
+        <p>Long-form essays and thoughts on <a href="https://dessertdynamics.substack.com/" target="_blank" rel="noopener noreferrer">Dessert Dynamics</a></p>
+        <ul>
+          <li>Subscribe for regular updates on economics, AI, and more</li>
+        </ul>
+        
+        <h3>Website Posts</h3>
+        <p>Short-form thoughts and technical notes:</p>
+        <ul>
+          <li><em>Coming soon...</em></li>
         </ul>
       </section>
     </main>
@@ -61,5 +99,26 @@
         <a href="https://github.com/transmissions11/transmissions11.github.io" target="_blank" rel="noopener noreferrer">t11s' fork</a> of the
         <a href="https://github.com/dapphub/dapp-tools" target="_blank" rel="noopener noreferrer">dapptools</a> website</em></p>
     </footer>
+    <script>
+      // Get all navigation buttons and sections
+      const navButtons = document.querySelectorAll('.nav-btn');
+      const sections = document.querySelectorAll('.content-section');
+
+      // Add click event to each button
+      navButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons and sections
+          navButtons.forEach(btn => btn.classList.remove('active'));
+          sections.forEach(section => section.classList.remove('active'));
+          
+          // Add active class to clicked button
+          button.classList.add('active');
+          
+          // Show corresponding section
+          const sectionId = button.getAttribute('data-section');
+          document.getElementById(sectionId).classList.add('active');
+        });
+      });
+    </script>
   </body>
 </html>

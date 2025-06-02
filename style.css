@@ -1,60 +1,211 @@
-title,
-.title {
-  text-align: center;
-  margin-bottom: 0.2em;
+/* Color palette */
+:root {
+  --bg-primary: #fdfcfa; /* Warm Color Palette */
+  --bg-secondary: #f9f7f4; /* Light Beige */
+  --text-primary: #3d3d3d; /* Soft Black */
+  --text-secondary: #6b6b6b; /* Muted Gray */
+  --accent:  #8b7355; /* Warm Brown */
+  --link: #6b5d54; /* Dark Warm bronw  */
+  --border: #e8e4de;  /* Light warm gray */
 }
 
-footer,
-.footer {
+
+/* Header Styling */
+header {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
   text-align: center;
+}
+
+.title {
+  margin-bottom: 0.5rem;
 }
 
 .subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+header p {
+  margin: 0.5rem 0;
+}
+
+/* Footer Styling */
+footer {
+  padding: 3rem 0 2rem;
   text-align: center;
-  font-size: medium;
-  font-weight: bold;
-  margin-top: 0;
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
 }
 
+.footer {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Base Typography */
 body {
-  line-height: 1.6;
+  font-family: 'Source Serif Pro', Georgia, serif;
   font-size: 18px;
-  padding: 0 10px;
-  margin: 60px auto;
-  max-width: 700px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h2,
-h2,
-h3 {
-  line-height: 1.2;
+/* Container for content */
+main, header, footer {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 h1 {
-  font-style: italic;
-  font-size: 24px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-style: italic;
-  font-size: 18px;
+  font-size: 2rem;
+  letter-spacing: -0.01em;
 }
 
-a:link,
-a:visited {
-  color: blue;
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
+/* Links */
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Sections */
+section {
+  margin: 3rem 0;
+}
+
+section p {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Intro section special styling */
+#intro {
+  background-color: var(--bg-secondary);
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin: 2rem -20px;
+}
+
+#intro p strong {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Lists */
+ul {
+  margin: 1rem 0 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Horizontal Rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0;
+}
+
+/* Code styling */
 code,
 .code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 1.125rem;
-  line-height: 1.6;
-  padding: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 0;
   font-size: 85%;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: var(--bg-secondary);
+  padding: 0.2em 0.4em;
   border-radius: 3px;
+}
+
+/* Navigation buttons */
+.section-nav {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 0 20px;
+}
+
+.nav-btn {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.nav-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* Content sections */
+.content-section {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.content-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }

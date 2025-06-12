@@ -18,13 +18,13 @@
         <a href="https://github.com/paiv1991" target="_blank" rel="noopener noreferrer">GitHub</a> or via
         <a href="mailto:andres.vega.1997@gmail.com">Email</a>
       </p>
-    </header>
+    </header> 
     <!-- Navigation buttons -->
     <nav class="section-nav">
       <button class="nav-btn active" data-section="about">About</button>
-      <button class="nav-btn" data-section="bookshelf">Bookshelf</button>
-      <button class="nav-btn" data-section="notes">Notes</button>
-      <button class="nav-btn" data-section="blog">Blog Posts</button>
+      <button class="nav-btn" data-section="blog">Blogs</button>
+      <button class="nav-btn" data-section="learning">Learning Notes</button>
+      <button class="nav-btn" data-section="projects">Projects</button>
     </nav>
 
     <!-- Content sections -->
@@ -50,31 +50,33 @@
         </div>
       </section>
 
-      <!-- Bookshelf Section -->
-      <section id="bookshelf" class="content-section">
-        <h2>Bookshelf</h2>
-        <p>Books I'm reading or have enjoyed:</p>
+      <!-- Learning Notes Section -->
+      <section id="learning" class="content-section">
+        <h2>Learning Notes</h2>
+        <p>My notes and insights from various learning journeys:</p>
         <ul>
-          <li><strong>Currently Reading:</strong></li>
-          <li><strong>Recently Finished:</strong></li>
-          <li><strong>All-Time Favorites:</strong></li>
+          <li><strong>Mechanistic Interpretability:</strong> Understanding how neural networks work internally</li>
+          <li><strong>Economics:</strong> Market dynamics, banking systems, and economic theory</li>
+          <li><strong>AI & Machine Learning:</strong> Papers, implementations, and experiments</li>
+          <li><strong>Mathematics:</strong> Linear algebra, calculus, and statistics for ML</li>
         </ul>
       </section>
 
-      <!-- Notes Section -->
-      <section id="notes" class="content-section">
-        <h2>Notes</h2>
-        <p>Interesting links, papers, and articles that I've collected:</p>
+      <!-- Projects Section -->
+      <section id="projects" class="content-section">
+        <h2>Projects</h2>
+        <p>Things I've built and experiments I'm working on:</p>
         <ul>
-          <li><strong>Economics:</strong></li>
-          <li><strong>AI & Machine Learning:</strong></li>
-          <li><strong>Philosophy & Meditation:</strong></li>
+          <li><strong>Neural Network Visualizations:</strong> Interactive animations to understand AI</li>
+          <li><strong>Economic Data Analysis:</strong> Middle East banking sector analysis</li>
+          <li><strong>OthelloGPT Research:</strong> Exploring emergent world models in transformers</li>
+          <li><strong>Personal Tools:</strong> Productivity apps and automation scripts</li>
         </ul>
       </section>
 
-      <!-- Blog Posts Section -->
+      <!-- Blogs Section -->
       <section id="blog" class="content-section">
-        <h2>Blog Posts</h2>
+        <h2>Blogs</h2>
         <p>My writings across different platforms:</p>
         
         <h3>Substack</h3>
@@ -89,16 +91,8 @@
           <li><em>Coming soon...</em></li>
         </ul>
       </section>
-    </main>
-    
+    </main> 
     <hr>
-    
-    <footer id="footer">
-      <p class="footer"><em>This website was modified from
-        <a href="https://github.com/gakonst/gakonst.github.io" target="_blank" rel="noopener noreferrer">Gakonst's fork</a> of the 
-        <a href="https://github.com/transmissions11/transmissions11.github.io" target="_blank" rel="noopener noreferrer">t11s' fork</a> of the
-        <a href="https://github.com/dapphub/dapp-tools" target="_blank" rel="noopener noreferrer">dapptools</a> website</em></p>
-    </footer>
     <script>
       // Get all navigation buttons and sections
       const navButtons = document.querySelectorAll('.nav-btn');
@@ -120,5 +114,10 @@
         });
       });
     </script>
+    <script src="nn-animation.js"></script>
+    <!-- Neural Network Animation -->
+    <div class="nn-container">
+      <canvas id="neural-network"></canvas>
+    </div>
   </body>
 </html>

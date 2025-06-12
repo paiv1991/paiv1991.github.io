@@ -1,3 +1,5 @@
-the html behind my blog website: [2λ.com](https://2λ.com)
-Found inspiration from gakonst, t11s and dapp tools
-Thanks!
+# Ivan Vega's Personal Website
+
+Personal website showcasing my work in Economics and AI research.
+
+Visit at: https://paiv1991.github.io

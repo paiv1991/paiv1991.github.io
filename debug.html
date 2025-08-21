@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Test</title>
+</head>
+<body>
+    <h1>Testing the Writing & Research Section</h1>
+    
+    <button onclick="testToggle()">Test Toggle Function</button>
+    
+    <div id="test-content" style="display: none; background: yellow; padding: 20px;">
+        If you can see this yellow box, JavaScript is working!
+    </div>
+    
+    <hr>
+    
+    <h2>Testing Your Actual Code:</h2>
+    
+    <!-- Copy of your actual HTML structure -->
+    <div class="writing-subsection">
+        <h3>🔬 Research Notes</h3>
+        <div class="learning-hierarchy">
+            <div class="category-section">
+                <button class="category-btn" onclick="alert('Button clicked!'); toggleCategory('ai')">
+                    <span class="category-arrow">▶</span> AI & Machine Learning (Click me!)
+                </button>
+                <div id="ai-content" class="category-content" style="display: none; border: 2px solid red; padding: 10px;">
+                    <p>AI CONTENT - If you see this red box, the toggle worked!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function testToggle() {
+            const elem = document.getElementById('test-content');
+            if (elem.style.display === 'none') {
+                elem.style.display = 'block';
+            } else {
+                elem.style.display = 'none';
+            }
+        }
+        
+        // Copy of your actual function
+        function toggleCategory(category) {
+            console.log('toggleCategory called with:', category);
+            const content = document.getElementById(category + '-content');
+            console.log('Found element:', content);
+            
+            if (!content) {
+                alert('ERROR: Could not find element with id: ' + category + '-content');
+                return;
+            }
+            
+            const arrow = event.target.querySelector('.category-arrow');
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                arrow.textContent = '▶';
+            } else {
+                content.style.display = 'block';
+                arrow.textContent = '▼';
+            }
+        }
+    </script>
+</body>
+</html>

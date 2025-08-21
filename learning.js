@@ -5,19 +5,24 @@ function toggleCategory(category) {
     const content = document.getElementById(category + '-content');
     const arrow = event.target.querySelector('.category-arrow');
     
-    if (content.style.display === 'block') {
-        content.style.display = 'none';
+    if (!content) {
+        console.error('Category content not found:', category);
+        return;
+    }
+    
+    if (content.classList.contains('show')) {
+        content.classList.remove('show');
         arrow.textContent = '▶';
     } else {
         // Close other categories first
         document.querySelectorAll('.category-content').forEach(cat => {
-            cat.style.display = 'none';
+            cat.classList.remove('show');
         });
         document.querySelectorAll('.category-arrow').forEach(arr => {
             arr.textContent = '▶';
         });
         
-        content.style.display = 'block';
+        content.classList.add('show');
         arrow.textContent = '▼';
     }
 }
@@ -27,11 +32,16 @@ function toggleSubcategory(subcategory) {
     const content = document.getElementById(subcategory + '-content');
     const arrow = event.target.querySelector('.subcategory-arrow');
     
-    if (content.style.display === 'block') {
-        content.style.display = 'none';
+    if (!content) {
+        console.error('Subcategory content not found:', subcategory);
+        return;
+    }
+    
+    if (content.classList.contains('show')) {
+        content.classList.remove('show');
         arrow.textContent = '▶';
     } else {
-        content.style.display = 'block';
+        content.classList.add('show');
         arrow.textContent = '▼';
     }
     

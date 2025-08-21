@@ -281,10 +281,18 @@ code,
   margin-left: 0.5rem;
 }
 
+.category-content.show {
+  display: block;
+}
+
 .subcategory-content {
   display: none;
   padding-left: 1.5rem;
   margin-top: 0.5rem;
+}
+
+.subcategory-content.show {
+  display: block;
 }
 
 .notes-list {

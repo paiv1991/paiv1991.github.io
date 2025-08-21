@@ -1,91 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ivan Vega</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Vega - Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fafafa;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .subtitle a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .subtitle a:hover {
+            text-decoration: underline;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .nav-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        .nav-btn.active {
+            background: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+        
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            font-size: 1.5em;
+        }
+        
+        h4 {
+            color: #555;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .research-category {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+        
+        .research-subcategory {
+            margin: 15px 0 15px 20px;
+            padding: 10px;
+            background: white;
+            border-left: 3px solid #95a5a6;
+            border-radius: 3px;
+        }
+        
+        .note-link {
+            display: inline-block;
+            margin: 5px 0;
+            padding: 8px 15px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .note-link:hover {
+            background: #d5dbdd;
+        }
+        
+        p {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+        
+        strong {
+            color: #2c3e50;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Ivan Vega</h1>
-        <p>Contact me on <a href="https://github.com/paiv1991">GitHub</a> or via <a href="mailto:andres.vega.1997@gmail.com">Email</a></p>
+        <p class="subtitle">
+            Contact me on <a href="https://github.com/paiv1991" target="_blank">GitHub</a> 
+            or via <a href="mailto:andres.vega.1997@gmail.com">Email</a>
+        </p>
     </header>
     
-    <!-- Simple Navigation -->
-    <nav class="section-nav">
-        <button class="nav-btn active" onclick="showSection('about')">About</button>
-        <button class="nav-btn" onclick="showSection('writing')">Writing & Research</button>
-        <button class="nav-btn" onclick="showSection('projects')">Projects</button>
+    <nav>
+        <button class="nav-btn active" data-section="about">About</button>
+        <button class="nav-btn" data-section="writing">Writing & Research</button>
+        <button class="nav-btn" data-section="projects">Projects</button>
     </nav>
     
-    <main id="content">
+    <main>
         <!-- About Section -->
-        <section id="about" style="display: block;">
-            <h2>About</h2>
+        <section id="about" class="section active">
+            <h2>About Me</h2>
             <p><strong>I'm an individual with a passion for Economic and AI Research</strong></p>
+            
+            <h3>Interests</h3>
             <ul>
-                <li>My interests are in Economics, AI, Meditation and Automated Market Makers (AMMs)</li>
-                <li>My other interests are Tennis, Soccer and Reading Fantasy!</li>
+                <li>Economics & Financial Markets</li>
+                <li>Artificial Intelligence & Machine Learning</li>
+                <li>Meditation & Mindfulness</li>
+                <li>Automated Market Makers (AMMs)</li>
             </ul>
+            
+            <h3>Hobbies</h3>
+            <ul>
+                <li>Tennis</li>
+                <li>Soccer</li>
+                <li>Reading Fantasy Literature</li>
+            </ul>
+            
+            <h3>Selected Work</h3>
+            <ul>
+                <li><a href="Chile.pdf" target="_blank">Effects of South American Migration in Chilean Labour Markets</a></li>
+                <li>Blog: <a href="https://dessertdynamics.substack.com/" target="_blank">Dessert Dynamics</a></li>
+            </ul>
+            
+            <p>If you find these topics interesting, <a href="mailto:andres.vega.1997@gmail.com">reach out</a>!</p>
         </section>
         
         <!-- Writing & Research Section -->
-        <section id="writing" style="display: none;">
+        <section id="writing" class="section">
             <h2>Writing & Research</h2>
-            <p>My writings, research notes, and explorations</p>
+            <p>My writings, research notes, and explorations in various fields.</p>
             
             <h3>📝 Blog & Essays</h3>
             <ul>
-                <li><a href="https://dessertdynamics.substack.com/">Dessert Dynamics</a> - Long-form essays</li>
+                <li>
+                    <a href="https://dessertdynamics.substack.com/" target="_blank">
+                        <strong>Dessert Dynamics</strong>
+                    </a> - Long-form essays on economics, AI, and more
+                </li>
+                <li><em>More website posts coming soon...</em></li>
             </ul>
             
             <h3>🔬 Research Notes</h3>
-            <div style="margin-left: 20px;">
+            
+            <div class="research-category">
                 <h4>AI & Machine Learning</h4>
-                <div style="margin-left: 20px;">
-                    <h5>Mechanistic Interpretability</h5>
+                
+                <div class="research-subcategory">
+                    <strong>Mechanistic Interpretability</strong>
                     <ul>
-                        <li><a href="learning-notes/othello_experiments.html" target="_blank">Othello-GPT Analysis</a></li>
+                        <li>
+                            <a href="learning-notes/othello_experiments.html" target="_blank" class="note-link">
+                                📄 Othello-GPT Analysis
+                            </a>
+                        </li>
+                        <li><em>More notes coming soon...</em></li>
                     </ul>
                 </div>
                 
+                <div class="research-subcategory">
+                    <strong>Machine Learning Fundamentals</strong>
+                    <ul>
+                        <li><em>Coming soon: Neural network implementations</em></li>
+                        <li><em>Coming soon: PyTorch experiments</em></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="research-category">
                 <h4>Economics</h4>
-                <p style="margin-left: 20px;">Coming soon...</p>
+                <ul>
+                    <li><em>Coming soon: Banking systems analysis</em></li>
+                    <li><em>Coming soon: Market dynamics studies</em></li>
+                    <li><em>Coming soon: Economic theory notes</em></li>
+                </ul>
             </div>
         </section>
         
         <!-- Projects Section -->
-        <section id="projects" style="display: none;">
+        <section id="projects" class="section">
             <h2>Projects</h2>
-            <p>Things I've built and experiments I'm working on:</p>
+            <p>Things I've built and experiments I'm working on.</p>
+            
+            <h3>Current Projects</h3>
             <ul>
-                <li><strong>AI Research:</strong> Mechanistic interpretability experiments</li>
-                <li><strong>Web Development:</strong> Interactive visualizations and tools</li>
+                <li><strong>Mechanistic Interpretability Research</strong> - Understanding how neural networks work internally</li>
+                <li><strong>Personal Website</strong> - This site, built with vanilla HTML/CSS/JS</li>
+                <li><strong>EPUB to Markdown Converter</strong> - Tool for converting books to readable formats</li>
+            </ul>
+            
+            <h3>Planned Projects</h3>
+            <ul>
+                <li>Interactive economics visualizations</li>
+                <li>AI experiment notebooks</li>
+                <li>Personal productivity tools</li>
             </ul>
         </section>
     </main>
     
     <script>
-        function showSection(sectionName) {
-            // Hide all sections
-            document.querySelectorAll('section').forEach(sec => {
-                sec.style.display = 'none';
+        // Simple navigation script
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.nav-btn');
+            const sections = document.querySelectorAll('.section');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and sections
+                    buttons.forEach(b => b.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const sectionId = this.getAttribute('data-section');
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.classList.add('active');
+                    }
+                });
             });
-            
-            // Remove active from all buttons
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionName).style.display = 'block';
-            
-            // Mark button as active
-            event.target.classList.add('active');
-            
-            console.log('Switched to section:', sectionName);
-        }
+        });
     </script>
 </body>
 </html>

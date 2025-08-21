@@ -135,6 +135,27 @@
     </script>
     <script src="learning.js"></script>
     <script src="nn-animation.js"></script>
+    <script>
+      // Debug: Log when Writing & Research is clicked
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('Page loaded, sections found:', document.querySelectorAll('.content-section').length);
+        
+        // Find the writing section
+        const writingSection = document.getElementById('writing');
+        if (writingSection) {
+          console.log('Writing section found!');
+        } else {
+          console.error('Writing section NOT found!');
+        }
+        
+        // Add debug logging to navigation
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            console.log('Button clicked:', btn.textContent, 'for section:', btn.getAttribute('data-section'));
+          });
+        });
+      });
+    </script>
     <!-- Neural Network Animation -->
     <div class="nn-container">
       <canvas id="neural-network"></canvas>

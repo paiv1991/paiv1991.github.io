@@ -1,0 +1,2 @@
+Test file created at: 2025-08-21
+Navigation should have: About | Writing & Research | Projects

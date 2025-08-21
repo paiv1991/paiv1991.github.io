@@ -205,6 +205,122 @@ code,
   to { opacity: 1; }
 }
 
+/* Writing & Research Sections */
+.writing-subsection {
+  margin: 2.5rem 0;
+}
+
+.writing-subsection h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.writing-links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.writing-links li {
+  padding: 0.5rem 0;
+}
+
+.writing-links a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.writing-links a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Learning Notes Hierarchical Navigation */
+.learning-hierarchy {
+  margin: 1rem 0;
+}
+
+.category-section {
+  margin-bottom: 1rem;
+}
+
+.category-btn, .subcategory-btn {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background: transparent;
+  color: var(--text-primary);
+  border: none;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.category-btn:hover, .subcategory-btn:hover {
+  color: var(--accent);
+}
+
+.subcategory-btn {
+  font-size: 0.95rem;
+  padding-left: 1.5rem;
+}
+
+.category-arrow, .subcategory-arrow {
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.category-content {
+  display: none;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--border);
+  margin-left: 0.5rem;
+}
+
+.subcategory-content {
+  display: none;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.notes-list li {
+  padding: 0.5rem 0;
+}
+
+.notes-list a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.notes-list a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.placeholder-text {
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .category-content, .subcategory-content {
+    padding-left: 1rem;
+  }
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

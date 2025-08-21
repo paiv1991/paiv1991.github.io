@@ -22,8 +22,7 @@
     <!-- Navigation buttons -->
     <nav class="section-nav">
       <button class="nav-btn active" data-section="about">About</button>
-      <button class="nav-btn" data-section="blog">Blogs</button>
-      <button class="nav-btn" data-section="learning">Learning Notes</button>
+      <button class="nav-btn" data-section="writing">Writing & Research</button>
       <button class="nav-btn" data-section="projects">Projects</button>
     </nav>
 
@@ -50,16 +49,53 @@
         </div>
       </section>
 
-      <!-- Learning Notes Section -->
-      <section id="learning" class="content-section">
-        <h2>Learning Notes</h2>
-        <p>My notes and insights from various learning journeys:</p>
-        <ul>
-          <li><strong>Mechanistic Interpretability:</strong> Understanding how neural networks work internally</li>
-          <li><strong>Economics:</strong> Market dynamics, banking systems, and economic theory</li>
-          <li><strong>AI & Machine Learning:</strong> Papers, implementations, and experiments</li>
-          <li><strong>Mathematics:</strong> Linear algebra, calculus, and statistics for ML</li>
-        </ul>
+      <!-- Writing & Research Section -->
+      <section id="writing" class="content-section">
+        <h2>Writing & Research</h2>
+        <p>My writings, research notes, and explorations</p>
+        
+        <!-- Blog Section -->
+        <div class="writing-subsection">
+          <h3>📝 Blog & Essays</h3>
+          <ul class="writing-links">
+            <li><a href="https://dessertdynamics.substack.com/" target="_blank" rel="noopener noreferrer">Dessert Dynamics</a> - Long-form essays on economics, AI, and more</li>
+            <li><em>Website posts coming soon...</em></li>
+          </ul>
+        </div>
+        
+        <!-- Research Notes Navigation -->
+        <div class="writing-subsection">
+          <h3>🔬 Research Notes</h3>
+        <div class="learning-hierarchy">
+          <!-- AI Section -->
+          <div class="category-section">
+            <button class="category-btn" onclick="toggleCategory('ai')">
+              <span class="category-arrow">▶</span> AI & Machine Learning
+            </button>
+            <div id="ai-content" class="category-content">
+              <button class="subcategory-btn" onclick="toggleSubcategory('mech-interp')">
+                <span class="subcategory-arrow">▶</span> Mechanistic Interpretability
+              </button>
+              <div id="mech-interp-content" class="subcategory-content">
+                <ul class="notes-list">
+                  <li><a href="learning-notes/othello_experiments.html" target="_blank">Othello-GPT Analysis</a></li>
+                  <!-- TODO(human): Add more mechanistic interpretability notes here -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Economics Section -->
+          <div class="category-section">
+            <button class="category-btn" onclick="toggleCategory('economics')">
+              <span class="category-arrow">▶</span> Economics
+            </button>
+            <div id="economics-content" class="category-content">
+              <p class="placeholder-text">Coming soon: Banking systems, market dynamics, and economic theory notes</p>
+            </div>
+          </div>
+        </div>
+        </div>
       </section>
 
       <!-- Projects Section -->
@@ -74,23 +110,6 @@
         </ul>
       </section>
 
-      <!-- Blogs Section -->
-      <section id="blog" class="content-section">
-        <h2>Blogs</h2>
-        <p>My writings across different platforms:</p>
-        
-        <h3>Substack</h3>
-        <p>Long-form essays and thoughts on <a href="https://dessertdynamics.substack.com/" target="_blank" rel="noopener noreferrer">Dessert Dynamics</a></p>
-        <ul>
-          <li>Subscribe for regular updates on economics, AI, and more</li>
-        </ul>
-        
-        <h3>Website Posts</h3>
-        <p>Short-form thoughts and technical notes:</p>
-        <ul>
-          <li><em>Coming soon...</em></li>
-        </ul>
-      </section>
     </main> 
     <hr>
     <script>
@@ -114,6 +133,7 @@
         });
       });
     </script>
+    <script src="learning.js"></script>
     <script src="nn-animation.js"></script>
     <!-- Neural Network Animation -->
     <div class="nn-container">

@@ -3,170 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivan Vega - Personal Website</title>
+    <title>Ivan Vega</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Color palette */
+        :root {
+          --bg-primary: #fdfcfa; /* Warm Color Palette */
+          --bg-secondary: #f9f7f4; /* Light Beige */
+          --text-primary: #3d3d3d; /* Soft Black */
+          --text-secondary: #6b6b6b; /* Muted Gray */
+          --accent:  #8b7355; /* Warm Brown */
+          --link: #6b5d54; /* Dark Warm brown  */
+          --border: #e8e4de;  /* Light warm gray */
         }
-        
+
+        /* Base Typography */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            font-family: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            margin: 0;
+            padding: 2rem 1.5rem;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: #fafafa;
         }
-        
+
+        /* Header Styling */
         header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #e0e0e0;
-            margin-bottom: 30px;
+          padding-top: 4rem;
+          padding-bottom: 2rem;
+          text-align: center;
         }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #2c3e50;
+
+        .title {
+          margin-bottom: 0.5rem;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 3rem;
+          font-weight: 700;
+          color: var(--text-primary);
         }
-        
+
         .subtitle {
-            color: #666;
-            font-size: 1.1em;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 1.1rem;
+          font-weight: 400;
+          color: var(--text-secondary);
+          margin-top: 0.5rem;
         }
-        
+
         .subtitle a {
-            color: #3498db;
-            text-decoration: none;
+          color: var(--link);
+          text-decoration: none;
         }
-        
+
         .subtitle a:hover {
-            text-decoration: underline;
+          text-decoration: underline;
         }
-        
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
+
+        /* Navigation */
+        .section-nav {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          margin: 3rem 0;
+          flex-wrap: wrap;
         }
-        
+
         .nav-btn {
-            padding: 10px 20px;
-            background: white;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 1rem;
+          font-weight: 500;
+          background: var(--bg-secondary);
+          color: var(--text-secondary);
+          border: 1px solid var(--border);
+          padding: 0.75rem 1.5rem;
+          margin: 0 0.5rem 0.5rem 0.5rem;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.2s ease;
         }
-        
         .nav-btn:hover {
-            background: #3498db;
-            color: white;
-            border-color: #3498db;
+          background: var(--accent);
+          color: white;
+          border-color: var(--accent);
         }
-        
         .nav-btn.active {
-            background: #2c3e50;
-            color: white;
-            border-color: #2c3e50;
+          background: var(--accent);
+          color: white;
+          border-color: var(--accent);
         }
-        
+
+        /* Content sections */
         .section {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: none;
+          display: none;
+          animation: fadeIn 0.3s ease;
+          margin-bottom: 4rem;
         }
-        
         .section.active {
-            display: block;
+          display: block;
         }
-        
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 2em;
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
-        
-        h3 {
-            color: #34495e;
-            margin: 25px 0 15px 0;
-            font-size: 1.5em;
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
         }
-        
-        h4 {
-            color: #555;
-            margin: 20px 0 10px 0;
-            font-size: 1.2em;
+
+        h2 { font-size: 2.5rem; margin-top: 0; }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.4rem; }
+
+        p {
+            margin: 1rem 0;
         }
-        
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        li {
-            margin: 8px 0;
-        }
-        
+
         a {
-            color: #3498db;
+            color: var(--link);
             text-decoration: none;
         }
-        
+
         a:hover {
             text-decoration: underline;
         }
-        
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        /* Research categories */
         .research-category {
-            margin: 20px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-left: 4px solid #3498db;
-            border-radius: 5px;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
         }
-        
+
         .research-subcategory {
-            margin: 15px 0 15px 20px;
-            padding: 10px;
-            background: white;
-            border-left: 3px solid #95a5a6;
-            border-radius: 3px;
+            margin: 1rem 0 1rem 1.5rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-left: 3px solid var(--border);
+            border-radius: 4px;
         }
-        
-        .note-link {
-            display: inline-block;
-            margin: 5px 0;
-            padding: 8px 15px;
-            background: #ecf0f1;
-            border-radius: 5px;
-            transition: background 0.3s;
+
+        /* Neural Network Animation */
+        .nn-container {
+            width: 100%;
+            height: 300px;
+            margin: 4rem 0 2rem 0;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border: 1px solid var(--border);
         }
-        
-        .note-link:hover {
-            background: #d5dbdd;
+
+        #neural-network {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
-        
-        p {
-            margin: 10px 0;
-            line-height: 1.8;
-        }
-        
-        strong {
-            color: #2c3e50;
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .section-nav {
+                gap: 0.5rem;
+            }
+            
+            .nav-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Ivan Vega</h1>
+        <h1 class="title">Ivan Vega</h1>
         <p class="subtitle">
             Contact me on <a href="https://github.com/paiv1991" target="_blank">GitHub</a> 
             or via <a href="mailto:andres.vega.1997@gmail.com">Email</a>
@@ -214,7 +252,7 @@
             <h2>Writing & Research</h2>
             <p>My writings, research notes, and explorations in various fields.</p>
             
-            <h3>📝 Blog & Essays</h3>
+            <h3>Blog & Essays</h3>
             <ul>
                 <li>
                     <a href="https://dessertdynamics.substack.com/" target="_blank">
@@ -224,7 +262,7 @@
                 <li><em>More website posts coming soon...</em></li>
             </ul>
             
-            <h3>🔬 Research Notes</h3>
+            <h3>Research Notes</h3>
             
             <div class="research-category">
                 <h4>AI & Machine Learning</h4>
@@ -234,7 +272,7 @@
                     <ul>
                         <li>
                             <a href="learning-notes/othello_experiments.html" target="_blank" class="note-link">
-                                📄 Othello-GPT Analysis
+                                Othello-GPT Analysis
                             </a>
                         </li>
                         <li><em>More notes coming soon...</em></li>
@@ -281,8 +319,13 @@
         </section>
     </main>
     
+    <!-- Neural Network Animation -->
+    <div class="nn-container">
+        <canvas id="neural-network"></canvas>
+    </div>
+    
     <script>
-        // Simple navigation script
+        // Navigation script
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.nav-btn');
             const sections = document.querySelectorAll('.section');
@@ -304,6 +347,105 @@
                     }
                 });
             });
+        });
+
+        // Neural Network Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('neural-network');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+                createParticles();
+            }
+            
+            // Particle class
+            class Particle {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.size = Math.random() * 3 + 1;
+                    this.opacity = Math.random() * 0.5 + 0.3;
+                }
+                
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    
+                    // Bounce off edges
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                    
+                    // Keep within bounds
+                    this.x = Math.max(0, Math.min(canvas.width, this.x));
+                    this.y = Math.max(0, Math.min(canvas.height, this.y));
+                }
+                
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(139, 115, 85, ${this.opacity})`;
+                    ctx.fill();
+                }
+            }
+            
+            // Create particles
+            function createParticles() {
+                particles = [];
+                const numParticles = Math.floor((canvas.width * canvas.height) / 8000);
+                for (let i = 0; i < numParticles; i++) {
+                    particles.push(new Particle(
+                        Math.random() * canvas.width,
+                        Math.random() * canvas.height
+                    ));
+                }
+            }
+            
+            // Draw connections
+            function drawConnections() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 100) {
+                            const opacity = (100 - distance) / 100 * 0.3;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(107, 93, 84, ${opacity})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            // Animation loop
+            function animate() {
+                ctx.fillStyle = 'rgba(253, 252, 250, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                drawConnections();
+                
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                
+                requestAnimationFrame(animate);
+            }
+            
+            // Initialize
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+            animate();
         });
     </script>
 </body>

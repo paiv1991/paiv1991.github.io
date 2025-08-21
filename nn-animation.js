@@ -114,6 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
     /* Create initial particles */
     function createParticles(){
         particles = [];
@@ -161,6 +162,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 })
+
 
 
 
